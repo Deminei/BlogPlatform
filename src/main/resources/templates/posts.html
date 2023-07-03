@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>All Blog Posts</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div style="margin-top: 8px; margin-left: 8px">
+    <a href="/index.html" class="btn btn-primary btn-lg">Home</a>
+</div>
+<div class="container mt-5">
+    <h1 class="mb-4">Blog Posts</h1>
+    <p class="lead">Is there a blogger whose creative life hasn’t been punctuated with slow writing periods?</p>
+    <a class="btn btn-success btn-lg" href="/posts/new" >Create +</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Author</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${posts}">
+            <td th:text="${post.title}">Title</td>
+            <td th:text="${post.content}">Content</td>
+            <td th:text="${post.author}">Author</td>
+            <td>
+                <a th:href="@{/posts/{id}/edit(id=${post.id})}" class="btn btn-primary">Edit</a>
+                <form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post" style="display: inline">
+                    <input type="hidden" name="_method" value="delete" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog Post</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h1 th:text="${post.title}"></h1>
+<p><strong>Author:</strong> <span th:text="${post.author}"></span></p>
+<p><strong>Content:</strong> <span th:text="${post.content}"></span></p>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

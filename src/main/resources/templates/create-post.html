@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Create/Edit Post</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Create New Post</h1>
+    <form th:action="@{/posts}" th:object="${post}" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" th:field="*{title}" required>
+        </div>
+        <div class="mb-3">
+            <label for="author">Author</label>
+            <input type="text" class="form-control" id="author" th:field="*{author}" required>
+        </div>
+        <div class="mb-3">
+            <label for="content">Content</label>
+            <textarea class="form-control" id="content" th:field="*{content}" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
