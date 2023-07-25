@@ -1,6 +1,6 @@
 # Blog Platform API Management System
 
-This is a Blog Management System built using Spring Boot. It simulates basic operations of a Blog Post system, allowing the user to create and manage posts. You can create, read, update and delete.
+This is a Blog Management System built using Spring Boot. It simulates the basic operations of a Blog Post system, allowing the user to create and manage posts. You can create, read, update, and delete.
 
 The primary functionalities include:
 
@@ -19,5 +19,13 @@ The primary functionalities include:
 ## Testing the application
 
 To test the application, simply follow the steps described in the functionalities after running the project.
+
+## Added Docker Files!
+
+Dockerized for convenience
+To run this project as a Docker image:
+
+1. run `docker build -t my-blog-app .`
+2. Use docker to run the image created.
 
 ## Happy Blogging!
